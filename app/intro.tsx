@@ -1,12 +1,21 @@
-import { View, Image, Text } from "react-native";
+import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { router } from 'expo-router';
 
-export default function Intro(){
-    return(
-        <View style={{flex:1, backgroundColor:"#FA432B"}}>
-            <View style={{paddingTop:20}}>
-                <Image source={require("@/assets/images/LOGO.png")}/>
-            </View>
-            
-        </View>
-    )
+export default function Intro() {
+  const handlePress = () => {
+    router.push("/formName");
+  };
+
+  return (
+    <View style={{ flex: 1, backgroundColor: "#FA432B", justifyContent: "center", alignItems: "center" }}>
+      
+      <TouchableOpacity onPress={handlePress}>
+        <Image
+          style={{ width: 300, height: 300 }}
+          source={require("@/assets/images/LOGO.png")}
+        />
+      </TouchableOpacity>
+    
+    </View>
+  );
 }

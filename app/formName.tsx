@@ -1,33 +1,37 @@
-import { View, Text, TextInput, Button, Image } from "react-native";
+import { View, Text, TextInput,  Image } from "react-native";
 import { useState } from "react";
 import { router } from "expo-router";
+import Button from "@/components/Button";
 
 export default function FormName() {
   const [name, setName] = useState("");
 
   const handleSubmit = () => {
     if (name.trim()) {
-     // router.replace("/home");
+    router.replace("/home");
     } else {
       alert("Por favor ingresa tu nombre.");
     }
   };
 
   return (
-    <View style={{ flex: 1, justifyContent: "center", padding: 20, backgroundColor:"#fff"}}>
-        <View>
+    <View style={{ flex: 1, padding:20,  backgroundColor:"#fff"}}>
+        <View style={{padding:50}}>
             <Image
-            style={{width:150, height:80}}
+            style={{width:265, height:265,paddingTop:50 }}
              source={require("@/assets/images/LOGO.png")}/>
         </View>
-      <Text>Ingresa tu nombre:</Text>
+        <View style={{paddingBottom:50}}>
+          <Text style={{fontSize:24, paddingBottom:10, textAlign:'center', fontWeight:'bold'}}>Ingresa tu Apodo:</Text>
       <TextInput
         placeholder="Tu nombre"
         value={name}
         onChangeText={setName}
-        style={{ borderWidth: 1, marginVertical: 10, padding: 8 }}
+        style={{ borderWidth: 1, marginVertical: 10, padding: 15, backgroundColor:'#FA432B', borderRadius:30, textAlign:'center', fontWeight:'bold', color:'#fff', }}
       />
-      <Button title="Empezar juego" onPress={handleSubmit} />
+        </View>
+      
+      <Button text="Guardar" backgroundColor="#FFCF11" textcolor="#000" onPress={handleSubmit} />
     </View>
   );
 }
