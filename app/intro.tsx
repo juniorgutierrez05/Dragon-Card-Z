@@ -1,7 +1,7 @@
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Image, TouchableOpacity } from 'react-native';
 import { router } from 'expo-router';
-
-export default function Intro() {
+import React from 'react';
+export default function IntroScreen() {
   const handlePress = () => {
     router.push("/formName");
   };

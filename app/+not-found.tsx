@@ -1,12 +1,13 @@
-import { Link, Stack } from 'expo-router';
-import { StyleSheet } from 'react-native';
-
+import { Stack } from 'expo-router';
+import { View, Text, StyleSheet } from 'react-native';
 
 export default function NotFoundScreen() {
   return (
     <>
       <Stack.Screen options={{ title: 'Oops!' }} />
-      
+      <View style={styles.container}>
+        <Text style={{ fontSize: 18 }}>La pantalla no fue encontrada 😢</Text>
+      </View>
     </>
   );
 }
@@ -17,9 +18,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
-  },
-  link: {
-    marginTop: 15,
-    paddingVertical: 15,
   },
 });

@@ -8,7 +8,10 @@ export default function FormName() {
 
   const handleSubmit = () => {
     if (name.trim()) {
-    router.replace("/home");
+    router.replace({
+  pathname: "/home",
+  params: { userName: name }
+});
     } else {
       alert("Por favor ingresa tu nombre.");
     }
